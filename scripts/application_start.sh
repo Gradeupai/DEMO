@@ -11,13 +11,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # loads nvm	
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion (node is in path now)
 
-nvm use default
 
 #install node modules
 npm install
-
-# Stop any existing node servers
-sudo pkill -f "node"
 
 #start our node app in the background
 node app.js > app.out.log 2> app.err.log < /dev/null & 
